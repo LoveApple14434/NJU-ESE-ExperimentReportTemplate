@@ -6,6 +6,9 @@
 \setCJKfamilyfont{mhwxk}{STXingkai} %华文行楷  
 \newcommand{\stxk}{\CJKfamily{mhwxk}} 
 
+% 如果你报错找不到\lishu命令，请取消下一行注释
+%\newCJKfontfamily\lishu{LiSu}
+
 \newcommand{\fillinblank}[2]{\underline{\makebox[#1]{#2}}}
 
 \renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
@@ -114,10 +117,39 @@
 	\subsection{$\beta$值测量}
 	\subsubsection{仿真测试}
 	\paragraph{电路图绘制}
+	\begin{figure}[!htbp]
+		\centering
+		\includegraphics[width=0.8\linewidth]{fig/2.4.jpg}
+		\caption{某示例电路图（低通滤波器？）}
+		\label{fig:LPF}
+	\end{figure}
 	\paragraph{分析与结论}
+	这里可以引用之前或之后的label，比如图~\ref{fig:LPF}或者表~\ref{tab:test}。
+	\paragraph{三线表}
+	\begin{table}[!htbp]
+		\centering
+		\caption{一个三线表示例}
+		\label{tab:test}
+		\begin{tabular}{lccc}
+			\toprule
+			test name & test value 1 & test value 2 & test value 3 \\
+			\midrule
+			name1 & v1 & v2 & v3 \\
+			name2 & vv1 & vv2 & vv3 \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
 	\subsubsection{硬件测试}
 	\subsection{静态工作点设置}
 	\section{实验小结及思考题}
+	\setcounter{figure}{0}
+	在切换section后，使用setcounter命令设置fig的编号，这样下面一张图才会是5.1而不是5.2。
+	\begin{figure}[!htbp]
+		\centering
+		\includegraphics[width=0.8\linewidth]{fig/test-img.png}
+		\caption{随便找的图}
+		\label{fig:test}
+	\end{figure}
 	\begin{thebibliography}{99}
 		\bibitem{Newton} Newton I, Hawking S, Biarnais F. Philosophiae Naturalis Principea Mathematica[C]//Annales de Chimie et de Physique. Royal Society Press, London, 1985, 431: 168-181.
 		\bibitem{Einstein} Einstein A, Podolsky B, Rosen N. Can quantum-mechanical description of physical reality be considered complete?[J]. Physical review, 1935, 47(10): 777.
