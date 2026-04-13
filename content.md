@@ -43,9 +43,9 @@ $$
 
 测试交叉引用 @fig:test_fig , @eq:test_equation 以及 @tbl:test_tab 。注意引用前后要有空格！
 
-|name|value|
-|---|---|
-|123|456|
+|name|value|$F_1$|
+|:---|---:|:---:|
+|123|456|111|
 :caption 表格标题{#tbl:test_tab}
 
 
@@ -67,3 +67,13 @@ print("Hello, world!")
         \caption{右图}
     \end{minipage}
 \end{figure}
+
+测试无序列表与有序列表
+
+- 1
+- 22
+- 333
+
+1. 1
+1. 22
+1. 333
