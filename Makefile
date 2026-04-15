@@ -15,6 +15,7 @@ TEX_TARGET := $(BUILD_DIR)/test.tex
 # pandoc 命令及通用参数
 PANDOC := pandoc
 PANDOC_COMMON := --template=$(TEMPLATE) --filter=pandoc-crossref --syntax-highlighting=idiomatic
+PANDOC_LUA := --lua-filter scripts/auto-rotate-table-headers.lua
 PANDOC_PDF_FLAGS := --pdf-engine=xelatex
 
 # 默认目标：同时生成 PDF 和 TeX
@@ -22,11 +23,11 @@ all: $(TEX_TARGET) $(PDF_TARGET)
 
 # 生成 PDF
 $(PDF_TARGET): $(SOURCE) $(TEMPLATE) | $(BUILD_DIR)
-	$(PANDOC) $(SOURCE) -o $@ $(PANDOC_COMMON) $(PANDOC_PDF_FLAGS)
+	$(PANDOC) $(SOURCE) -o $@ $(PANDOC_COMMON) $(PANDOC_PDF_FLAGS) $(PANDOC_LUA)
 
 # 生成 TeX（不需要 --pdf-engine）
 $(TEX_TARGET): $(SOURCE) $(TEMPLATE) | $(BUILD_DIR)
-	$(PANDOC) $(SOURCE) -o $@ $(PANDOC_COMMON)
+	$(PANDOC) $(SOURCE) -o $@ $(PANDOC_COMMON) $(PANDOC_LUA)
 
 # 创建 build 目录（如果不存在）
 $(BUILD_DIR):

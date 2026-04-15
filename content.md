@@ -9,7 +9,7 @@ exp_name: "神秘的神秘实验"
 time: "13 月 32、39、46 日"
 room: "北大楼 101"
 teacher: "水煮鱼"
-packages: "graphicx,amsmath,amssymb,amsthm,fancyhdr,needspace,geometry,xeCJK"
+packages: "graphicx,amsmath,amssymb,amsthm,fancyhdr,needspace,geometry,xeCJK,calc,array"
 optional_packages: "booktabs,longtable,listings,subfig"
 booktabs: true
 pandoc-crossref:
@@ -46,7 +46,23 @@ $$
 |name|value|$F_1$|
 |:---|---:|:---:|
 |123|456|111|
-:caption 表格标题{#tbl:test_tab}
+:表格标题{#tbl:test_tab}
+
+|表头|这是一组中等长度的表头|000|
+|---|---|---|
+|1|11111111111111111111111|1|
+|11|11|11|
+:测试中等长度表头
+
+
+|11|2222222222222|这是一组真的非常非常非常非常非常长的表头哦|
+|---|---|---|
+|1|2|3|
+|1234|5678|9090909090909090909090|
+:测试超长表头
+
+
+现在会根据**所有表头的总字符数**自动应用旋转了！12个中文字符以上旋转45度，24个中文字符以上旋转90度。一个英文字符算半个中文字符。
 
 
 ```{.python .number-lines startFrom="10"}
