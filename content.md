@@ -9,7 +9,7 @@ exp_name: "神秘的神秘实验"
 time: "13 月 32、39、46 日"
 room: "北大楼 101"
 teacher: "水煮鱼"
-packages: "graphicx,amsmath,amssymb,amsthm,fancyhdr,needspace,geometry,xeCJK,calc,array"
+packages: "graphicx,amsmath,amssymb,amsthm,fancyhdr,needspace,geometry,xeCJK,calc,array,xcolor"
 optional_packages: "booktabs,longtable,listings,subfig"
 booktabs: true
 pandoc-crossref:
@@ -30,11 +30,11 @@ eqnPrefix: "公式"
 
 测试正文
 
-![测试图片](fig/2.4.jpg){#fig:test_fig}
+![测试图片](fig/2.4.jpg){#fig:test_fig width=80%}
 
 # 测试一级标题*2
 
-![测试图片2：测试图片编号](fig/2.4.jpg){}
+![测试图片2：测试图片编号](fig/2.4.jpg){width=80%}
 
 $$
 F=\int \frac{Gm_1m_2}{r^2} dr
@@ -67,6 +67,15 @@ $$
 
 ```{.python .number-lines startFrom="10"}
 print("Hello, world!")
+```
+
+```{.C .number-lines startFrom="0"}
+#include <stdio.h>
+
+int main(void) {
+    printf("Hello, world!\n");
+    return 0;
+}
 ```
 
 如果你想在同一行里放多张图片，也许只能硬写LaTeX了？
